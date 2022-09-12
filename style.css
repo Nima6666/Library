@@ -2,7 +2,7 @@
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body{
-    background: linear-gradient(to right, rgb(228, 228, 181), skyblue); 
+    background: linear-gradient(to right, rgb(228, 228, 181), skyblue);
 }
 
 .booksButton {
@@ -56,53 +56,45 @@ body{
 .addBook.enabled:active {
     box-shadow: none;
 }
-
-.form * , .form{
+form {
     background: rgb(216, 199, 199);
-}
-.form {
-    position: absolute;
-    top: 0;
+    position: sticky;
+    bottom: calc((100vh/2) - 150px);
+    left: calc((100vw/2) - 150px);
     display: none;
-    align-items: center;
-    justify-content: center;
-    transform: translate(calc((100vw/2) - 150px), calc((100vh/2) - 150px));
+    flex-direction: column;
+    justify-content: space-between;
     width: 300px;
     height: 300px;
     padding: 10px;
     border-radius: 15px;
+    border: solid black;
 }
-.form img {
+form img {
     position: absolute;
     top: 5px;
     right: 5px;
-    height: 6%;
+    height: 15px;
     padding: 5px;
     border-radius: 50%;
     transition: 0.5s;
 }
-.form img:hover {
+form img:hover {
     background: rgb(161, 161, 161);
     border-radius: 50%;
     transform: scale(1.2);
 }
-.form img:active {
+form img:active {
     background: rgb(116, 114, 114);
 }
-.form form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.form .inputs {
+form .inputs {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     flex: 1;
 }
-.form input {
+form input {
     display: block;
     outline: none;
     width: 100%;
@@ -111,10 +103,10 @@ body{
     border-radius: 10px;
     background: whitesmoke;
 }
-.form div > input:focus {
+form div > input:focus {
     border: 1px solid rgb(237, 237, 199);
 }
-.form .readStat input{
+form .readStat input{
     display: none;
 }
 .readStat label{
@@ -129,7 +121,7 @@ body{
     border-radius: 50%;
     border: 3px solid rebeccapurple;
 }
-.form .readStat input:checked ~ .readCheck {
+form .readStat input:checked ~ .readCheck {
     border: 3px solid green;
     background-image: url("./icon/check.png");
     background-color: green;

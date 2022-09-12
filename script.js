@@ -1,14 +1,14 @@
 const books = document.querySelector('.books');
 const addBookFormDisplay = document.querySelector('.addBook');
-const forum = document.querySelector('.form');
-const forumCross = document.querySelector('.form img');
+const forum = document.querySelector('form');
+const forumCross = document.querySelector('form img');
 const booksButton = document.querySelector('.booksButton');
 const title = document.querySelector('.title input');
 const author = document.querySelector('.author input');
 const pages = document.querySelector('.pages input');
 const read = document.querySelector('#read');
 const addBook = document.querySelector('.submit button');
-const actform = document.querySelector('.form form');
+const actform = document.querySelector('form');
 
 let library = [{title: 'The Catcher in the Rye', author: 'J. D. Salinger', pages: 277, isRead: true},
             {title: 'The Lord of the Rings', author: 'J. R. R. Tolkien', pages: 1728, isRead: false}];
@@ -87,7 +87,8 @@ function display(title, author, pages, read) {
     }))
 
     delButton.forEach(button => button.addEventListener('click', (e) => {
-        library.splice((((button.parentElement).parentElement).dataset.book), (((button.parentElement).parentElement).dataset.book) + 1)
+        console.log((((button.parentElement).parentElement).dataset.book));
+        library.splice((((button.parentElement).parentElement).dataset.book), 1)
         display();
     }))
 }
